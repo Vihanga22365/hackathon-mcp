@@ -1,23 +1,17 @@
 from mcp.server.fastmcp import FastMCP
+from tools.get_nearby_location_activities import get_nearby_location_activities
+from tools.get_past_activities import get_past_activities
+from tools.get_past_locations import get_past_locations
+from tools.get_weather import get_weather
 
-# Stateful server (maintains session state)
 mcp = FastMCP("StatefulServer")
 
-# Other configuration options:
-# Stateless server (no session persistence)
-# mcp = FastMCP("StatelessServer", stateless_http=True)
-
-# Stateless server (no session persistence, no sse stream with supported client)
-# mcp = FastMCP("StatelessServer", stateless_http=True, json_response=True)
-
-
-# Add a simple tool to demonstrate the server
-@mcp.tool()
-def greet(name: str = "World") -> str:
-    """Greet someone by name."""
-    return f"Hello, {name}!"
+# Register all tools with the MCP server
+mcp.tool()(get_nearby_location_activities)
+mcp.tool()(get_past_activities)
+mcp.tool()(get_past_locations)
+mcp.tool()(get_weather)
 
 
-# Run server with streamable_http transport
 if __name__ == "__main__":
     mcp.run(transport="streamable-http")
