@@ -3,6 +3,7 @@ from tools.get_nearby_location_activities import get_nearby_location_activities
 from tools.get_past_activities import get_past_activities
 from tools.get_past_locations import get_past_locations
 from tools.get_weather import get_weather
+from tools.get_all_location_for_designation import get_all_location_for_designation
 
 mcp = FastMCP("StatefulServer")
 
@@ -11,6 +12,7 @@ mcp.tool()(get_nearby_location_activities)
 mcp.tool()(get_past_activities)
 mcp.tool()(get_past_locations)
 mcp.tool()(get_weather)
+mcp.tool()(get_all_location_for_designation)
 
 
 if __name__ == "__main__":
