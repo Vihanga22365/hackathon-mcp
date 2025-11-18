@@ -25,34 +25,45 @@ def get_nearby_location_activities(location: str = "Unknown") -> list:
             return data
 
     except Exception as e:
-        dummy = [
-            {
-                "name": "Temple of the Tooth Relic (Sri Dalada Maligawa)",
-                "distance_km": 1.0,
-                "activities": [
-                    "Cultural sightseeing",
-                    "Historical exploration",
-                    "Religious worship"
-                ]
-            },
-            {
-                "name": "Peradeniya Botanical Garden",
-                "distance_km": 6.0,
-                "activities": [
-                    "Nature walk",
-                    "Photography",
-                    "Picnic",
-                    "Botanical exploration"
-                ]
-            },
-            {
-                "name": "Bahirawakanda Temple",
-                "distance_km": 2.0,
-                "activities": [
-                    "Hilltop hike",
-                    "Panoramic city view",
-                    "Temple visit"
-                ]
-            }
-        ]
-        return dummy
+        if location.lower() == "kandy":
+            dummy = [
+                {
+                    "name": "Temple of the Tooth Relic (Sri Dalada Maligawa)",
+                    "distance_km": 1.0,
+                    "activities": [
+                        "Cultural sightseeing",
+                        "Historical exploration",
+                        "Religious worship"
+                    ],
+                    "category": ["cultural", "religious", "historical"]
+                },
+                {
+                    "name": "Peradeniya Botanical Garden",
+                    "distance_km": 6.0,
+                    "activities": [
+                        "Nature walk",
+                        "Photography",
+                        "Picnic",
+                        "Botanical exploration"
+                    ],
+                    "category": ["nature", "photography", "family"]
+                },
+                {
+                    "name": "Bahirawakanda Temple",
+                    "distance_km": 2.0,
+                    "activities": [
+                        "Hilltop hike",
+                        "Panoramic city view",
+                        "Temple visit"
+                    ],
+                    "category": ["hiking", "cultural", "photography"]
+                }
+            ]
+            return dummy
+        else:
+            return [
+                {
+                    "message": "Think nearby locations by yourself",
+                    "location": location
+                }
+            ]

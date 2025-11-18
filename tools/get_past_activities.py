@@ -29,27 +29,32 @@ def get_past_activities(user: str) -> list:
             {
                 "activity": "Hiking to Ella Rock viewpoint and sunrise photography",
                 "date": "2025-11-15",
-                "budget": 2500
+                "budget": 2500,
+                "category": ["hiking", "photography", "nature"]
             },
             {
                 "activity": "Rainforest trekking and bird watching in Sinharaja",
                 "date": "2025-11-16",
-                "budget": 3000
+                "budget": 3000,
+                "category": ["nature", "wildlife", "hiking"]
             },
             {
                 "activity": "World's End trail hike and wildlife observation",
                 "date": "2025-11-17",
-                "budget": 2800
+                "budget": 2800,
+                "category": ["hiking", "nature", "wildlife"]
             },
             {
                 "activity": "Climb Pidurangala Rock and explore Sigiriya surroundings",
                 "date": "2025-11-18",
-                "budget": 2000
+                "budget": 2000,
+                "category": ["hiking", "cultural", "adventure"]
             },
             {
                 "activity": "Trekking and camping in Knuckles Mountain valleys",
                 "date": "2025-11-19",
-                "budget": 3500
+                "budget": 3500,
+                "category": ["hiking", "camping", "nature", "adventure"]
             }
         ]
         return dummy

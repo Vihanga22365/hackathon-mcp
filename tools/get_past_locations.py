@@ -29,27 +29,32 @@ def get_past_locations(user: str) -> list:
             {
                 "location": "Ella Rock, Badulla",
                 "date": "2025-11-15",
-                "group_size": 4
+                "group_size": 4,
+                "category": ["hiking", "photography", "nature"]
             },
             {
                 "location": "Sinharaja Forest Reserve, Deniyaya",
                 "date": "2025-11-16",
-                "group_size": 5
+                "group_size": 5,
+                "category": ["nature", "wildlife", "hiking"]
             },
             {
                 "location": "Horton Plains National Park, Nuwara Eliya",
                 "date": "2025-11-17",
-                "group_size": 3
+                "group_size": 3,
+                "category": ["hiking", "nature", "wildlife"]
             },
             {
                 "location": "Pidurangala Rock, Sigiriya",
                 "date": "2025-11-18",
-                "group_size": 2
+                "group_size": 2,
+                "category": ["hiking", "cultural", "adventure"]
             },
             {
                 "location": "Knuckles Mountain Range, Matale",
                 "date": "2025-11-19",
-                "group_size": 6
+                "group_size": 6,
+                "category": ["hiking", "camping", "nature", "adventure"]
             }
         ]
         return dummy
