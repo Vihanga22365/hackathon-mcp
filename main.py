@@ -5,19 +5,8 @@ from tools.get_past_locations import get_past_locations
 from tools.get_weather import get_weather
 from tools.get_all_location_for_designation import get_all_location_for_designation
 from tools.validate_future_date import validate_future_date
-from datetime import datetime
 
 mcp = FastMCP("StatefulServer")
-
-# Health check endpoint
-@mcp.custom_route("/health", methods=["GET"])
-async def health_check():
-    return {
-        "status": "healthy",
-        "service": "StatefulServer",
-        "timestamp": datetime.utcnow().isoformat(),
-        "version": "1.0.0"
-    }
 
 # Register all tools with the MCP server
 mcp.tool()(get_nearby_location_activities)
@@ -29,4 +18,4 @@ mcp.tool()(validate_future_date)
 
 
 if __name__ == "__main__":
-    mcp.run(transport="streamable-http", host="0.0.0.0", port=8000)
+    mcp.run(transport="streamable-http")
